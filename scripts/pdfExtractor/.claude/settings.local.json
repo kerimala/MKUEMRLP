@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "mcp__serena__get_symbols_overview"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

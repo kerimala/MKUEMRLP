@@ -1,0 +1,186 @@
+///////////////////////////////////////////////////////
+// DtP Datenmodell – REGELN (Basis, ohne NSG-Extras) //
+///////////////////////////////////////////////////////
+
+// ---------- ENUMS (Auswahllisten aus der PDF) ----------
+Enum jahreszeit_enum {
+  fruehling
+  sommer
+  herbst
+  winter
+}
+
+Enum tageszeit_enum {
+  tag
+  nacht
+  daemmerung
+}
+
+Enum wetterbedingung_enum {
+  schnee
+  eis
+  regen
+  naesse
+  nebel
+  sonne
+  trockenheit
+  sturm
+}
+
+Enum ort_enum {
+  gesamte_flaeche_des_gebietes
+  oeffentlich_gewidmete_strassen_plaetze
+  ausgewiesene_wege_plaetze
+  unbefestigte_land_und_forstwirtschaftliche_wege
+  pfade
+}
+
+Enum erlaubnis_enum {
+  erlaubt
+  verboten
+  nur_mit_behoerdlicher_erlaubnis_erlaubt
+  nur_mit_grundbesitzererlaubnis_erlaubt
+  nicht_empfohlen
+}
+
+Enum kategorie_enum {
+  bergaktivitaeten
+  reitaktivitaeten
+  radsportaktivitaeten
+  motorisierte_aktivitaeten
+  laufaktivitaeten
+  aufenthaltsaktivitaeten
+  generelles_verhalten
+  luftaktivitaeten
+  schneeaktivitaeten
+  urbane_aktivitaeten
+  wasseraktivitaeten
+  betretungsverhalten
+}
+
+Enum aktivitaet_enum {
+  klettern
+  base_jumping
+  reiten
+  bespannte_fahrzeuge
+  radfahren
+  kraftfahrzeug
+  camping_fahrzeug_anhaenger
+  lagern_biwakieren
+  feuer
+  zelten
+  pflanzen_sammeln
+  pilze_sammeln
+  mineralien_fossilien_sammeln
+  baeume_faellen_oder_verletzen
+  fotografieren_filmen
+  laerm_tonband_abspielgeraete
+  toilettengang
+  abfall_entsorgen
+  hunde
+  hunde_ohne_leine
+  ballonfahren
+  drohnen_flugmodelle
+  panoramafluege
+  paraglider
+  segelflieger
+  ultraleichtflieger
+  rodeln_schlitten
+  schneeschuhwandern
+  ski_und_snowboardfahren
+  skilanglauf
+  skitouren
+  angeln
+  baden
+  baden_von_tieren
+  tauchen
+  nutzung_von_schwimmhilfe
+  wasserfahrzeuge_ohne_motor
+  wasserfahrzeuge_motorisiert
+  betreten_des_gebietes
+  betreten_abseits_der_wege
+  eisklettern
+  tiere_fuettern
+  rauchen
+  luftsport_starten_landen
+  wintersport
+  wassersport
+}
+
+// ---------- KERN-TABELLEN ----------
+Table regel {
+  id                  int            [pk, increment]
+  schutzgebiet_uuid   uuid           // Verweis (frei) auf externes Schutzgebiet
+  aktivitaet_id       int            [not null, ref: > aktivitaet.id]
+  ort_id              int            [not null, ref: > aktivitaetsort.id]
+  erlaubnis_id        int            [not null, ref: > aktivitaetserlaubnis.id]
+
+  jahreszeit          jahreszeit_enum      // optional
+  saison_beginn       date                 // optional
+  saison_ende         date                 // optional
+
+  tageszeit           tageszeit_enum       // optional
+  tageszeit_beginn    time                 // optional
+  tageszeit_ende      time                 // optional
+
+  wetterbedingung     wetterbedingung_enum // optional
+  min_weg_breite      decimal(5,2)         // optionale minimale Wegbreite (m)
+
+  kommentar           text                 // Freitext
+  user_id             int            [ref: > user.id]
+  created_at          timestamp
+  updated_at          timestamp
+}
+
+Table regel_icon { // M:N zwischen Regel und Icon
+  regel_id  int [ref: > regel.id]
+  icon_id   int [ref: > icon.id]
+
+  indexes {
+    (regel_id, icon_id) [pk]
+  }
+}
+
+Table aktivitaet {
+  id            int            [pk, increment]
+  code          int
+  kategorie_id  int            [ref: > aktivitaetskategorie.id] // Beziehung
+  aktivitaet    aktivitaet_enum                         // Auswahl
+}
+
+Table aktivitaetskategorie {
+  id         int            [pk, increment]
+  code       int
+  kategorie  kategorie_enum                           // Choice
+}
+
+Table aktivitaetsort {
+  id    int            [pk, increment]
+  code  int
+  ort   ort_enum                                       // Auswahl
+}
+
+Table aktivitaetserlaubnis {
+  id        int            [pk, increment]
+  code      int
+  erlaubnis erlaubnis_enum                             // Auswahl
+}
+
+Table icon {
+  id     int    [pk, increment]
+  name   text   [not null]
+  datei  text   // Pfad/Dateiname/URL
+}
+
+Table user {
+  id            int    [pk, increment]
+  organisation  text
+  homepage      text
+  adresse       text
+  email         text
+}
+
+// ---------- RELATIONEN (zur Lesbarkeit) ----------
+// regel -> aktivitaet/aktivitaetsort/aktivitaetserlaubnis/user (n:1)
+// regel <-> icon (m:n über regel_icon)
+// aktivitaet -> aktivitaetskategorie (n:1)

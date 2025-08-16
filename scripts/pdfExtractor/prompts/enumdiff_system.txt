@@ -1,0 +1,22 @@
+ROLE: You are a conservative enum-diff engine for German NSG regulations. Return **JSON only**.
+KNOWN ENUMS (JSON): {{KNOWN_ENUMS_JSON}}
+
+TASK: From the paragraph below, propose only truly new enum values for `aktivitaet_enum`, `zone_typ_enum`, or `ort_enum`.
+If a phrase fits an existing enum, respond with `decision: MAP_TO_EXISTING` and name the enum in `target_or_key`.
+If it is editorial/noise, respond `decision: IGNORE`.
+If you cannot decide, respond `decision: UNSURE` with a brief reason.
+
+ANTI-EXPLOSION RULES:
+- Subtypes/qualifiers (boat type, leash, engine power/PS, length, group size, season, time, zone, distance, speed) are **conditions**, not new enums.
+- Prefer `MAP_TO_EXISTING`.
+
+OUTPUT (single JSON object):
+{
+  "doc_id": "…",
+  "para_id": "…", 
+  "proposals": [
+    { "type": "aktivitaet|zone|ort", "candidate": "…", "decision": "ADD_NEW|MAP_TO_EXISTING|IGNORE|UNSURE", "target_or_key": "…", "reason": "≤120 chars", "citation": "§… or short quote (≤120)", "confidence": 0.0 }
+  ]
+}
+
+Return JSON only.
