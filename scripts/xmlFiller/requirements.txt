@@ -1,0 +1,19 @@
+# NSG PDF to XML/JSON Converter Dependencies
+
+# PDF extraction libraries
+PyMuPDF>=1.24.0
+pdfminer.six>=20231228
+
+# XML processing
+lxml>=5.2.0
+
+# Date/time parsing
+python-dateutil>=2.9.0
+
+# Optional: OCR support (uncomment if needed)
+# pytesseract>=0.3.10
+
+# Note: For OCR support, you also need to install tesseract-ocr system package:
+# Ubuntu/Debian: sudo apt-get install tesseract-ocr tesseract-ocr-deu
+# macOS: brew install tesseract
+# Windows: Download from https://github.com/UB-Mannheim/tesseract/wiki

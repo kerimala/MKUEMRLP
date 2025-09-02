@@ -1,0 +1,245 @@
+{
+  "_comment": "Synonym mappings for NSG PDF to XML/JSON converter",
+  "_format": "Each key is a text phrase that maps to either a string (enum value) or object with enum_type and enum_value",
+  
+  "aktivitaet_synonyms": {
+    "Betreten": "betreten_des_gebietes",
+    "das Betreten": "betreten_des_gebietes",
+    "Begehung": "betreten_des_gebietes",
+    "Betretung": "betreten_des_gebietes",
+    "abseits der Wege gehen": "betreten_abseits_der_wege",
+    "Verlassen der Wege": "betreten_abseits_der_wege",
+    "querfeldein": "betreten_abseits_der_wege",
+    
+    "Fahrradfahren": "radfahren",
+    "Rad fahren": "radfahren",
+    "Mountainbiken": "radfahren",
+    "E-Bike fahren": "radfahren",
+    
+    "Auto fahren": "kraftfahrzeug",
+    "PKW": "kraftfahrzeug",
+    "Motorrad": "kraftfahrzeug",
+    "KFZ": "kraftfahrzeug",
+    
+    "Übernachten": "zelten",
+    "Campen": "camping_fahrzeug_anhaenger",
+    "Wohnmobil": "camping_fahrzeug_anhaenger",
+    "Wohnwagen": "camping_fahrzeug_anhaenger",
+    
+    "Lagerfeuer": "feuer",
+    "Grillen": "feuer",
+    "offenes Feuer": "feuer",
+    "Feuer machen": "feuer",
+    
+    "Angelsport": "angeln",
+    "Fischfang": "angeln",
+    "Sportfischerei": "angeln",
+    
+    "Schwimmen": "baden",
+    "ins Wasser gehen": "baden",
+    
+    "Bootfahren": "wasserfahrzeuge_ohne_motor",
+    "Paddeln": "wasserfahrzeuge_ohne_motor",
+    "Kanufahren": "wasserfahrzeuge_ohne_motor",
+    "Rudern": "wasserfahrzeuge_ohne_motor",
+    "Stand-up-Paddling": "wasserfahrzeuge_ohne_motor",
+    "SUP": "wasserfahrzeuge_ohne_motor",
+    
+    "Motorboot": "wasserfahrzeuge_motorisiert",
+    "Jetski": "wasserfahrzeuge_motorisiert",
+    
+    "Drohnenflug": "drohnen_flugmodelle",
+    "UAV": "drohnen_flugmodelle",
+    "Modellflugzeug": "drohnen_flugmodelle",
+    
+    "Hundeauslauf": "hunde",
+    "Hunde ausführen": "hunde",
+    "Hunde freilaufen lassen": "hunde_ohne_leine",
+    "Hunde ableinen": "hunde_ohne_leine",
+    
+    "Beeren sammeln": "pflanzen_sammeln",
+    "Kräuter sammeln": "pflanzen_sammeln",
+    "Blumen pflücken": "pflanzen_sammeln",
+    
+    "Pilze suchen": "pilze_sammeln",
+    "Schwammerl suchen": "pilze_sammeln",
+    
+    "Fossilien suchen": "mineralien_fossilien_sammeln",
+    "Steine sammeln": "mineralien_fossilien_sammeln",
+    
+    "Skifahren": "ski_und_snowboardfahren",
+    "Snowboarden": "ski_und_snowboardfahren",
+    "Langlauf": "skilanglauf",
+    "Skiwandern": "skitouren",
+    
+    "Gleitschirmfliegen": "paraglider",
+    "Drachenfliegen": "paraglider",
+    
+    "Jagen": "jagd_ausuebung",
+    "Jagdausübung": "jagd_ausuebung",
+    "Fischen": "fischereiliche_nutzung_fischbesatz",
+    "Fischerei": "fischereiliche_nutzung_fischbesatz"
+  },
+  
+  "ort_synonyms": {
+    "im gesamten Gebiet": "gesamte_flaeche_des_gebietes",
+    "Gesamtgebiet": "gesamte_flaeche_des_gebietes",
+    "gesamtes Schutzgebiet": "gesamte_flaeche_des_gebietes",
+    "überall": "gesamte_flaeche_des_gebietes",
+    
+    "öffentliche Straßen": "oeffentlich_gewidmete_strassen_plaetze",
+    "öffentliche Wege": "oeffentlich_gewidmete_strassen_plaetze",
+    "Gemeindestraßen": "oeffentlich_gewidmete_strassen_plaetze",
+    
+    "gekennzeichnete Wege": "ausgewiesene_wege_plaetze",
+    "markierte Wege": "ausgewiesene_wege_plaetze",
+    "beschilderte Wege": "ausgewiesene_wege_plaetze",
+    "Wanderwege": "ausgewiesene_wege_plaetze",
+    
+    "Forstwege": "unbefestigte_land_und_forstwirtschaftliche_wege",
+    "Waldwege": "unbefestigte_land_und_forstwirtschaftliche_wege",
+    "Feldwege": "unbefestigte_land_und_forstwirtschaftliche_wege",
+    "Wirtschaftswege": "unbefestigte_land_und_forstwirtschaftliche_wege",
+    
+    "Trampelpfade": "pfade",
+    "schmale Pfade": "pfade",
+    "Fußpfade": "pfade",
+    
+    "Wasserfläche": "gewasserflaeche",
+    "Gewässer": "gewasserflaeche",
+    "See": "gewasserflaeche",
+    "Teich": "gewasserflaeche",
+    "Fluss": "gewasserflaeche",
+    "Bach": "gewasserflaeche",
+    
+    "Ufer": "uferbereich",
+    "Uferlinie": "uferbereich",
+    "Uferzone": "uferbereich",
+    "Gewässerufer": "uferbereich",
+    "Seeufer": "uferbereich",
+    "Flussufer": "uferbereich"
+  },
+  
+  "erlaubnis_synonyms": {
+    "untersagt": "verboten",
+    "nicht gestattet": "verboten",
+    "nicht erlaubt": "verboten",
+    "unzulässig": "verboten",
+    "nicht zulässig": "verboten",
+    
+    "gestattet": "erlaubt",
+    "zulässig": "erlaubt",
+    "freigegeben": "erlaubt",
+    
+    "mit Genehmigung": "nur_mit_behoerdlicher_erlaubnis_erlaubt",
+    "mit behördlicher Genehmigung": "nur_mit_behoerdlicher_erlaubnis_erlaubt",
+    "mit Erlaubnis der Behörde": "nur_mit_behoerdlicher_erlaubnis_erlaubt",
+    "genehmigungspflichtig": "nur_mit_behoerdlicher_erlaubnis_erlaubt",
+    
+    "mit Zustimmung des Grundeigentümers": "nur_mit_grundbesitzererlaubnis_erlaubt",
+    "mit Erlaubnis des Eigentümers": "nur_mit_grundbesitzererlaubnis_erlaubt",
+    "mit Gestattung des Besitzers": "nur_mit_grundbesitzererlaubnis_erlaubt"
+  },
+  
+  "zone_typ_synonyms": {
+    "Kernzone": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "ruhezone"
+    },
+    "Ruhezone": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "ruhezone"
+    },
+    "Pufferzone": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "schutzstreifen"
+    },
+    "Randzone": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "schutzstreifen"
+    },
+    "Flachwasserzone": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "uferzone"
+    },
+    "Schilfgürtel": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "uferzone"
+    },
+    "Röhricht": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "uferzone"
+    },
+    "Altwasser": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "altarm"
+    },
+    "Altrhein": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "altarm"
+    },
+    "Grünland": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "wiese_acker"
+    },
+    "Ackerland": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "wiese_acker"
+    },
+    "Waldgebiet": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "waldabteilung"
+    },
+    "Forst": {
+      "enum_type": "zone_typ_enum",
+      "enum_value": "waldabteilung"
+    }
+  },
+  
+  "bedingung_typ_hints": {
+    "im Frühjahr": {
+      "enum_type": "jahreszeit_enum",
+      "enum_value": "fruehling"
+    },
+    "im Sommer": {
+      "enum_type": "jahreszeit_enum",
+      "enum_value": "sommer"
+    },
+    "im Herbst": {
+      "enum_type": "jahreszeit_enum",
+      "enum_value": "herbst"
+    },
+    "im Winter": {
+      "enum_type": "jahreszeit_enum",
+      "enum_value": "winter"
+    },
+    "bei Schnee": {
+      "enum_type": "wetterbedingung_enum",
+      "enum_value": "schnee"
+    },
+    "bei Eis": {
+      "enum_type": "wetterbedingung_enum",
+      "enum_value": "eis"
+    },
+    "bei Nässe": {
+      "enum_type": "wetterbedingung_enum",
+      "enum_value": "naesse"
+    },
+    "bei Regen": {
+      "enum_type": "wetterbedingung_enum",
+      "enum_value": "regen"
+    },
+    "tagsüber": {
+      "enum_type": "tageszeit_enum",
+      "enum_value": "tag"
+    },
+    "nachts": {
+      "enum_type": "tageszeit_enum",
+      "enum_value": "nacht"
+    },
+    "in der Dämmerung": {
+      "enum_type": "tageszeit_enum",
+      "enum_value": "daemmerung"
+    }
+  }
+}

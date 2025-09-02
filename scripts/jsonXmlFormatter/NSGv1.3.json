@@ -1,0 +1,2056 @@
+{
+  "project": null,
+  "tables": [
+    {
+      "name": "schutzgebiet",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "uuid",
+          "type": "uuid",
+          "primary_key": false,
+          "unique": true,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "kennung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "kreis",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "gemeinden_text",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "flaeche_ha",
+          "type": "decimal(10,2)",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "wfs_url",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "gml_id",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": null,
+          "columns": [],
+          "unique": true,
+          "type": null,
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "behoerde",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ebene",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ort",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "dokument",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "schutzgebiet_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "typ",
+          "type": "dokument_typ_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "status",
+          "type": "dokument_status_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "titel",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "datum",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "gueltig_ab",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "gueltig_bis",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "aktenzeichen",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "amtsblatt",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "rechtsgrundlage",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "pdf_quelle",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "seiten_anzahl",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ersetzt_dokument_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ist_fehlanzeige",
+          "type": "boolean",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "dokument_behoerde",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "dokument_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "behoerde_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "rolle",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": null,
+          "columns": [],
+          "unique": false,
+          "type": null,
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "paragraf",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "dokument_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "nummer",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "rubrum",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "text",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "sort_index",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": null,
+          "columns": [],
+          "unique": true,
+          "type": null,
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "anhang",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "dokument_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "bezeichnung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "seiten_hinweis",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "beschreibung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "zone",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "schutzgebiet_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "typ",
+          "type": "zone_typ_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "beschreibung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "quelle",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "zone_gruppe",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "schutzgebiet_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "beschreibung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "zone_zone_gruppe",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "zone_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "zone_gruppe_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": null,
+          "columns": [],
+          "unique": false,
+          "type": null,
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "aktivitaetskategorie",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "code",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "kategorie",
+          "type": "kategorie_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "aktivitaet",
+      "schema": "public",
+      "note": "Reklassifizierung: modellflug_drohnen_betreiben → luftaktivitaeten; modellfahrzeuge_betreiben → motorisierte_aktivitaeten; modellschiffe_betreiben → wasseraktivitaeten.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "code",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "kategorie_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "aktivitaet",
+          "type": "aktivitaet_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "aktivitaetsort",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "code",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ort",
+          "type": "ort_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "aktivitaetserlaubnis",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "code",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "erlaubnis",
+          "type": "erlaubnis_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "regel",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "schutzgebiet_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "dokument_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "paragraf_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "aktivitaet_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "ort_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "erlaubnis_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "zone_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "jahreszeit",
+          "type": "jahreszeit_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "saison_beginn",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "saison_ende",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "tageszeit",
+          "type": "tageszeit_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "tageszeit_beginn",
+          "type": "time",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "tageszeit_ende",
+          "type": "time",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "wetterbedingung",
+          "type": "wetterbedingung_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "min_weg_breite",
+          "type": "decimal(5,2)",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "kommentar",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "user_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "regel_bedingung",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "regel_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "typ",
+          "type": "bedingung_typ_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "vergleich",
+          "type": "operator_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "value_num",
+          "type": "decimal(12,3)",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "value_num2",
+          "type": "decimal(12,3)",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "einheit",
+          "type": "einheit_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "bezugsflaeche",
+          "type": "bezugsflaeche_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "stoff",
+          "type": "stoff_enum",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "date_from",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "date_to",
+          "type": "date",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "time_from",
+          "type": "time",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "time_to",
+          "type": "time",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "zone_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "zone_gruppe_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "event_name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "bemerkung",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "regel_icon",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "regel_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "icon_id",
+          "type": "int",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": null,
+          "columns": [],
+          "unique": false,
+          "type": null,
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": true,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "datei",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    },
+    {
+      "name": "user",
+      "schema": "public",
+      "note": null,
+      "columns": [
+        {
+          "name": "id",
+          "type": "int",
+          "primary_key": true,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": true,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "organisation",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "homepage",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "adresse",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "primary_key": false,
+          "unique": false,
+          "not_null": false,
+          "auto_increment": false,
+          "default": null,
+          "note": null
+        }
+      ],
+      "indexes": []
+    }
+  ],
+  "enums": [
+    {
+      "name": "dokument_typ_enum",
+      "schema": "public",
+      "items": [
+        "verordnung",
+        "aenderungsverordnung",
+        "ergaenzung",
+        "befahrensverordnung",
+        "polizeiverordnung",
+        "berichtigung",
+        "sonstige_verordnung"
+      ],
+      "note": null
+    },
+    {
+      "name": "dokument_status_enum",
+      "schema": "public",
+      "items": [
+        "in_kraft",
+        "aufgehoben",
+        "unbekannt"
+      ],
+      "note": null
+    },
+    {
+      "name": "ausnahme_art_enum",
+      "schema": "public",
+      "items": [
+        "genehmigung",
+        "befreiung",
+        "landwirtschaft",
+        "forstwirtschaft",
+        "jagd",
+        "fischerei",
+        "unterhaltung_infrastruktur",
+        "telekommunikation",
+        "energieversorgung",
+        "verkehrssicherung_gefahrenabwehr",
+        "informationstafeln_besucherlenkung",
+        "invasive_arten_neobiota",
+        "wissenschaft_pflege_entwicklung",
+        "sonstiges"
+      ],
+      "note": null
+    },
+    {
+      "name": "zone_typ_enum",
+      "schema": "public",
+      "items": [
+        "gesamtgebiet",
+        "uferzone",
+        "altarm",
+        "buhnenfeld",
+        "gewasserflaeche",
+        "schutzstreifen",
+        "waldabteilung",
+        "wiese_acker",
+        "weg_trasse",
+        "ruhezone",
+        "steinbrueche_sandgruben_erdaufschluesse",
+        "sonstiges"
+      ],
+      "note": null
+    },
+    {
+      "name": "bedingung_typ_enum",
+      "schema": "public",
+      "items": [
+        "jahreszeit",
+        "datumspanne",
+        "tageszeit",
+        "wochentag",
+        "wetter",
+        "abstand_m",
+        "menge_limit",
+        "wegepflicht",
+        "zonenbezug",
+        "geschwindigkeit",
+        "artenschutz_schutzzeit",
+        "motor_leistung_kw",
+        "fahrzeug_laenge_m",
+        "personen_max",
+        "feiertag_event",
+        "sonstiges"
+      ],
+      "note": null
+    },
+    {
+      "name": "jahreszeit_enum",
+      "schema": "public",
+      "items": [
+        "fruehling",
+        "sommer",
+        "herbst",
+        "winter"
+      ],
+      "note": null
+    },
+    {
+      "name": "tageszeit_enum",
+      "schema": "public",
+      "items": [
+        "tag",
+        "nacht",
+        "daemmerung"
+      ],
+      "note": null
+    },
+    {
+      "name": "wetterbedingung_enum",
+      "schema": "public",
+      "items": [
+        "schnee",
+        "eis",
+        "regen",
+        "naesse",
+        "nebel",
+        "sonne",
+        "trockenheit",
+        "sturm"
+      ],
+      "note": null
+    },
+    {
+      "name": "ort_enum",
+      "schema": "public",
+      "items": [
+        "gesamte_flaeche_des_gebietes",
+        "oeffentlich_gewidmete_strassen_plaetze",
+        "ausgewiesene_wege_plaetze",
+        "unbefestigte_land_und_forstwirtschaftliche_wege",
+        "pfade",
+        "gewasserflaeche",
+        "uferbereich"
+      ],
+      "note": null
+    },
+    {
+      "name": "erlaubnis_enum",
+      "schema": "public",
+      "items": [
+        "erlaubt",
+        "verboten",
+        "nur_mit_behoerdlicher_erlaubnis_erlaubt",
+        "nur_mit_grundbesitzererlaubnis_erlaubt",
+        "nicht_empfohlen"
+      ],
+      "note": null
+    },
+    {
+      "name": "kategorie_enum",
+      "schema": "public",
+      "items": [
+        "bergaktivitaeten",
+        "reitaktivitaeten",
+        "radsportaktivitaeten",
+        "motorisierte_aktivitaeten",
+        "laufaktivitaeten",
+        "aufenthaltsaktivitaeten",
+        "generelles_verhalten",
+        "luftaktivitaeten",
+        "schneeaktivitaeten",
+        "urbane_aktivitaeten",
+        "wasseraktivitaeten",
+        "betretungsverhalten",
+        "nutzungs_eingriffs_handlungen"
+      ],
+      "note": null
+    },
+    {
+      "name": "operator_enum",
+      "schema": "public",
+      "items": [
+        "lt",
+        "lte",
+        "eq",
+        "gte",
+        "gt",
+        "neq",
+        "approx",
+        "within"
+      ],
+      "note": null
+    },
+    {
+      "name": "einheit_enum",
+      "schema": "public",
+      "items": [
+        "m",
+        "km",
+        "ha",
+        "km_h",
+        "kw",
+        "personen",
+        "stueck",
+        "kg",
+        "kg_ha",
+        "g_m2"
+      ],
+      "note": null
+    },
+    {
+      "name": "bezugsflaeche_enum",
+      "schema": "public",
+      "items": [
+        "pro_ha",
+        "pro_betrieb",
+        "beidseits",
+        "im_gebiet",
+        "in_zone"
+      ],
+      "note": null
+    },
+    {
+      "name": "stoff_enum",
+      "schema": "public",
+      "items": [
+        "stickstoff",
+        "phosphat",
+        "kalium",
+        "duenger_allgemein",
+        "pestizid_biozid"
+      ],
+      "note": null
+    },
+    {
+      "name": "aktivitaet_enum",
+      "schema": "public",
+      "items": [
+        "klettern",
+        "eisklettern",
+        "base_jumping",
+        "reiten",
+        "bespannte_fahrzeuge",
+        "radfahren",
+        "kraftfahrzeug",
+        "camping_fahrzeug_anhaenger",
+        "lagern_biwakieren",
+        "feuer",
+        "zelten",
+        "pflanzen_sammeln",
+        "pilze_sammeln",
+        "mineralien_fossilien_sammeln",
+        "fotografieren_filmen",
+        "laerm_tonband_abspielgeraete",
+        "toilettengang",
+        "abfall_entsorgen",
+        "hunde",
+        "hunde_ohne_leine",
+        "ballonfahren",
+        "drohnen_flugmodelle",
+        "panoramafluege",
+        "paraglider",
+        "segelflieger",
+        "ultraleichtflieger",
+        "rodeln_schlitten",
+        "schneeschuhwandern",
+        "ski_und_snowboardfahren",
+        "skilanglauf",
+        "skitouren",
+        "angeln",
+        "baden",
+        "baden_von_tieren",
+        "tauchen",
+        "nutzung_von_schwimmhilfe",
+        "wasserfahrzeuge_ohne_motor",
+        "wasserfahrzeuge_motorisiert",
+        "betreten_des_gebietes",
+        "betreten_abseits_der_wege",
+        "tiere_fuettern",
+        "rauchen",
+        "luftsport_starten_landen",
+        "wintersport",
+        "wassersport",
+        "modellflug_drohnen_betreiben",
+        "modellfahrzeuge_betreiben",
+        "modellschiffe_betreiben",
+        "bauliche_anlagen_errichten_oder_erweitern",
+        "leitungen_verlegen_ueber_unter_erde",
+        "einfriedungen_errichten_oder_erweitern",
+        "materiallagerplaetze_schrottplaetze_anlegen",
+        "abfall_ablegen_verunreinigen",
+        "bodanfassenengestalt_aendern_abgraben_auffuellen_sprengen_bohren",
+        "gewaesser_herstellen_beseitigen_umgestalten_ufer_aendern",
+        "eingriff_in_den_wasserhaushalt",
+        "aufforstung_erstmalig",
+        "waldroden",
+        "umwandlung_dauergruenland",
+        "duenger_ausbringen",
+        "pflanzenbehandlungsmittel_chemische_mittel_verwenden",
+        "nichtheimische_arten_einbringen",
+        "tiernachstellung_fang_toetung_brutstaetten_stoeren",
+        "jagd_ausuebung",
+        "fischereiliche_nutzung_fischbesatz",
+        "reiten_ausserhalb_ausgewiesener_wege",
+        "fahren_parken_ausserhalb_oefentlich_gewidmeter_wege",
+        "bild_oder_schrifttafeln_anbringen",
+        "anlegestellen_anglerstege_errichten",
+        "segeln_surfen_befahren_ohne_motor",
+        "tauchen_mit_ausruestung",
+        "intensive_weidewirtschaft",
+        "wildacker_anlegen_oder_unterhalten",
+        "wildfuetterungsstellen_anlegen_oder_unterhalten",
+        "strassen_und_wege_neu_oder_ausbauen",
+        "weihnachtsbaumkultur_anlegen",
+        "baumschulkulturen_anlegen",
+        "sonderkulturen_anlegen",
+        "eissport_auf_gewaessern",
+        "geocaching",
+        "massensportveranstaltung_durchfuehren",
+        "geophysikalische_untersuchungen",
+        "wirtschaftliche_oder_gewerbliche_taetigkeit_ausueben",
+        "tiere_aussetzen_ansiedeln",
+        "pflanzen_oder_pflanzenteile_einbringen",
+        "gaerten_anlegen_oder_unterhalten",
+        "vieh_traenken_im_gewaesser",
+        "furten_anlegen"
+      ],
+      "note": null
+    }
+  ],
+  "references": [
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "dokument.schutzgebiet_id"
+      ],
+      "col2": [
+        "schutzgebiet.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "dokument.ersetzt_dokument_id"
+      ],
+      "col2": [
+        "dokument.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "dokument_behoerde.dokument_id"
+      ],
+      "col2": [
+        "dokument.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "dokument_behoerde.behoerde_id"
+      ],
+      "col2": [
+        "behoerde.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "paragraf.dokument_id"
+      ],
+      "col2": [
+        "dokument.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "anhang.dokument_id"
+      ],
+      "col2": [
+        "dokument.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "zone.schutzgebiet_id"
+      ],
+      "col2": [
+        "schutzgebiet.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "zone_gruppe.schutzgebiet_id"
+      ],
+      "col2": [
+        "schutzgebiet.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "zone_zone_gruppe.zone_id"
+      ],
+      "col2": [
+        "zone.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "zone_zone_gruppe.zone_gruppe_id"
+      ],
+      "col2": [
+        "zone_gruppe.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "aktivitaet.kategorie_id"
+      ],
+      "col2": [
+        "aktivitaetskategorie.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.schutzgebiet_id"
+      ],
+      "col2": [
+        "schutzgebiet.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.dokument_id"
+      ],
+      "col2": [
+        "dokument.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.paragraf_id"
+      ],
+      "col2": [
+        "paragraf.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.aktivitaet_id"
+      ],
+      "col2": [
+        "aktivitaet.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.ort_id"
+      ],
+      "col2": [
+        "aktivitaetsort.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.erlaubnis_id"
+      ],
+      "col2": [
+        "aktivitaetserlaubnis.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel.zone_id"
+      ],
+      "col2": [
+        "zone.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel_bedingung.regel_id"
+      ],
+      "col2": [
+        "regel.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel_bedingung.zone_id"
+      ],
+      "col2": [
+        "zone.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel_bedingung.zone_gruppe_id"
+      ],
+      "col2": [
+        "zone_gruppe.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel_icon.regel_id"
+      ],
+      "col2": [
+        "regel.id"
+      ]
+    },
+    {
+      "name": null,
+      "type": ">",
+      "on_delete": null,
+      "on_update": null,
+      "col1": [
+        "regel_icon.icon_id"
+      ],
+      "col2": [
+        "icon.id"
+      ]
+    }
+  ],
+  "table_groups": [],
+  "metadata": {
+    "total_tables": 18,
+    "total_enums": 16,
+    "total_references": 23,
+    "total_table_groups": 0
+  }
+}
